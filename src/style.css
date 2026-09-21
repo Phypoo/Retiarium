@@ -1,0 +1,44 @@
+:root {
+  --primary-color: #212b36;
+  --secondary-color: #ff7d29;
+  --tertiary-color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+}
+
+figure {
+  position: relative;
+  width: 1000px;
+  height: fit-content;
+  max-width: 80%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.strokeSvg {
+  width: 100%;
+  z-index: 2;
+  order: 1;
+  filter: drop-shadow(0 0 10px #ffffff);
+}
+/* .logo-mask{
+  position: absolute;
+  width: 100%;
+
+  mask-image: url("./assets/objects/phypoSolid.svg");
+  -webkit-mask-image: url("./assets/objects/phypoSolid.svg");
+
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+    
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+} */
