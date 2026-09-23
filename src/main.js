@@ -1,6 +1,6 @@
 // IMPORTS
 
-import './style.css';
+import '/style.css';
 import { gsap } from "gsap";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import * as THREE from 'three';
