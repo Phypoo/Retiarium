@@ -4,7 +4,7 @@
 		"description": "Phypo Portfolio Page",
 		"start_url": "/",
 		"scope": "/",
-		"display": "standalone",
+		"display": "fullscreen",
 		"orientation": "any",
 		"background_color": "#212b36",
 		"theme_color": "#3c4e54",
