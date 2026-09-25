@@ -1,19 +1,31 @@
-// sw.js - Basic PWA Service Worker
+const CACHE_NAME = 'portfolio-v1'
+const ASSETS_TO_CACHE = [
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  // add your bundled JS/CSS paths — tricky since Vite hashes filenames
+]
 
-// 1. Install event
 self.addEventListener('install', (event) => {
-  // Forces the waiting service worker to become the active service worker
-  self.skipWaiting();
-});
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS_TO_CACHE))
+  )
+  self.skipWaiting()
+})
 
-// 2. Activate event
 self.addEventListener('activate', (event) => {
-  // Claims control of uncontrolled clients instantly
-  event.waitUntil(self.clients.claim());
-});
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
+    )
+  )
+  self.clients.claim()
+})
 
-// 3. Fetch event (Required by Android Chrome for PWA installability)
 self.addEventListener('fetch', (event) => {
-  // Simply fetches assets directly from the network
-  event.respondWith(fetch(event.request));
-});
+  event.respondWith(
+    caches.match(event.request).then((cached) => cached || fetch(event.request))
+  )
+})

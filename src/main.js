@@ -1,5 +1,4 @@
 // IMPORTS
-
 import './style.css';
 import { gsap } from "gsap";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
@@ -7,6 +6,14 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+// SERVICE WORKER
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+  })
+}
+
+// GSAP
 gsap.registerPlugin(MorphSVGPlugin);
 
 const path = document.getElementById("blob");
