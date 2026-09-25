@@ -10,19 +10,19 @@
 	"theme_color": "#3c4e54",
 	"icons": [
 		{
-			"src": "/public/icon.svg",
+			"src": "/icon.svg",
 			"sizes": "any",
 			"type": "image/svg+xml",
 			"purpose": "any"
 		},
 		{
-			"src": "/public/icon-maskable.svg",
+			"src": "/icon-maskable.svg",
 			"sizes": "any",
 			"type": "image/svg+xml",
 			"purpose": "maskable"
 		},
 		{
-			"src": "/public/icon-monochrome.svg",
+			"src": "/icon-monochrome.svg",
 			"sizes": "any",
 			"type": "image/svg+xml",
 			"purpose": "monochrome"
